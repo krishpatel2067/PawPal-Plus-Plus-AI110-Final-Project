@@ -1,5 +1,5 @@
 from datetime import date
-from pawpal_system import Owner, Pet, Scheduler, Task
+from pawpal_system import Owner, Pet, Priority, Scheduler, Task
 
 
 def print_tasks(label: str, tasks: list[Task]) -> None:
@@ -9,7 +9,7 @@ def print_tasks(label: str, tasks: list[Task]) -> None:
     for t in tasks:
         status = "✓" if t.completed else "○"
         pets = ", ".join(t.pet_names) if t.pet_names else "None"
-        print(f"  [{status}] {t.name} | {pets} | {t.date} | {t.frequency}")
+        print(f"  [{status}] {t.name} | {t.priority.name} | {pets} | {t.date} | {t.frequency}")
 
 
 def section(title: str) -> None:
@@ -32,17 +32,20 @@ owner.add_pet(biscuit)
 today = date(2026, 3, 28)
 tomorrow = date(2026, 3, 29)
 
-scheduler.add_task(Task("Morning Walk",   "Walk around the block",    False, "daily",   today,    ["Biscuit"]))
-scheduler.add_task(Task("Evening Walk",   "Walk around the block",    False, "daily",   tomorrow, ["Biscuit"]))
-scheduler.add_task(Task("Mochi Feeding",  "Half cup dry food",        False, "daily",   today,    ["Mochi"]))
-scheduler.add_task(Task("Flea Treatment", "Apply topical treatment",  False, "monthly", today,    ["Mochi", "Biscuit"]))
-scheduler.add_task(Task("Vet Checkup",    "Annual wellness exam",     False, "yearly",  tomorrow, ["Mochi"]))
-scheduler.add_task(Task("House Rules",    "No pets on the sofa",      False, "always",  today,    []))
+scheduler.add_task(Task("Morning Walk",   "Walk around the block",   False, "daily",   today,    Priority.LOW,    ["Biscuit"]))
+scheduler.add_task(Task("Evening Walk",   "Walk around the block",   False, "daily",   tomorrow, Priority.LOW,    ["Biscuit"]))
+scheduler.add_task(Task("Mochi Feeding",  "Half cup dry food",       False, "daily",   today,    Priority.MEDIUM, ["Mochi"]))
+scheduler.add_task(Task("Flea Treatment", "Apply topical treatment", False, "monthly", today,    Priority.HIGH,   ["Mochi", "Biscuit"]))
+scheduler.add_task(Task("Vet Checkup",    "Annual wellness exam",    False, "yearly",  tomorrow, Priority.HIGH,   ["Mochi"]))
+scheduler.add_task(Task("House Rules",    "No pets on the sofa",     False, "always",  today,    Priority.LOW,    []))
 
 # ── Normal scenarios ───────────────────────────────
 
 section("All tasks")
 print_tasks("", scheduler.tasks)
+
+section("Tasks by priority")
+print_tasks("", scheduler.get_tasks_by_priority())
 
 section("Tasks for Biscuit")
 print_tasks("", scheduler.get_tasks_for_pet("Biscuit"))
@@ -80,13 +83,13 @@ except ValueError as e:
 
 section("Edge case: add task for unknown pet")
 try:
-    scheduler.add_task(Task("Bath Time", "Scrub scrub", False, "weekly", today, ["Rex"]))
+    scheduler.add_task(Task("Bath Time", "Scrub scrub", False, "weekly", today, Priority.LOW, ["Rex"]))
 except ValueError as e:
     print(f"  ERROR: {e}")
 
 section("Edge case: merge task with same name for existing pet")
 owner.add_pet(Pet(name="Mochi", species="Cat", age_years=3.0))
-scheduler.add_task(Task("Evening Walk", "Walk around the block", False, "daily", tomorrow, ["Mochi"]))
+scheduler.add_task(Task("Evening Walk", "Walk around the block", False, "daily", tomorrow, Priority.LOW, ["Mochi"]))
 print_tasks("Evening Walk after merging Mochi:", scheduler.get_tasks_for_pet("Mochi"))
 
 section("Edge case: remove task that doesn't exist")

@@ -1,6 +1,13 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date
+from enum import Enum
+
+
+class Priority(Enum):
+    HIGH = 1
+    MEDIUM = 2
+    LOW = 3
 
 
 @dataclass
@@ -12,10 +19,12 @@ class Task:
     completed: bool
     frequency: str       # e.g. "daily", "weekly", "as needed"
     date: date
+    priority: Priority
     pet_names: list[str] = field(default_factory=list)  # empty = no pets assigned
 
     def __post_init__(self) -> None:
-        self.pet_names = list(dict.fromkeys(self.pet_names))  # deduplicate, preserve order
+        """Remove duplicate pet names while preserving their original order."""
+        self.pet_names = list(dict.fromkeys(self.pet_names))
 
 
 @dataclass
@@ -78,6 +87,10 @@ class Scheduler:
         for t in self.tasks:
             t.pet_names = [n for n in t.pet_names if n != pet_name]
 
+    def task_count_for_pet(self, pet_name: str) -> int:
+        """Return the number of tasks assigned to a specific pet."""
+        return len(self.get_tasks_for_pet(pet_name))
+
     def get_tasks_for_pet(self, pet_name: str) -> list[Task]:
         """Return all tasks assigned to a specific pet."""
         return [t for t in self.tasks if pet_name in t.pet_names]
@@ -89,6 +102,10 @@ class Scheduler:
     def get_unassigned_tasks(self) -> list[Task]:
         """Return all tasks with no pets assigned."""
         return [t for t in self.tasks if not t.pet_names]
+
+    def get_tasks_by_priority(self) -> list[Task]:
+        """Return all tasks sorted from HIGH to LOW priority."""
+        return sorted(self.tasks, key=lambda t: t.priority.value)
 
     def mark_complete(self, task_name: str) -> None:
         """Mark a task as completed by name."""

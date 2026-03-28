@@ -15,6 +15,8 @@ The initial UML design consists of four classes:
     - `Scheduler` - Concrete class. Generates plans and manages high-level scheduling.
     - `Task` - Data class. Contains key task atributes such as name, priority (for sorting), and is mandatory. 
 
+There is also an enum called `Priority` to manage task priority and allow sorting by priority.
+
 **b. Design changes**
 
 - Did your design change during implementation?
@@ -31,10 +33,14 @@ Yes, the design of the app specified by the UML changed. In particular, I made i
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
 
+I implemented priority as a constraint since it was the simplest for this project but also the most useful. Pet owners want to ensure they do the urgent tasks first to ensure their pets' wellbeing. Plus, this opens up a nice opportunity for the front end to have a sort-by-priority functionality.
+
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+
+The Scheduler airs on the side of code readibility and not necessarily efficiency. For example, it uses list comprehension to creae a completely new list each time items need to be removed from it. Under a DSA context, this is inefficient due to extra memory allocation. However, I decided this tradeoff was reasonable in this app's scenario since owners would only have a countable number of pets and tasks, so efficiency differences should be minimal with normal use, especially if the code is more robust (e.g. removing all duplicates via list comprehension) and short.
 
 ---
 
