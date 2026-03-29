@@ -19,35 +19,18 @@ Your job is to design the system first (UML), then implement the logic in Python
 - Filter tasks by pets and completion status
 - Automatically create the next occurrence for recurring tasks when marking them as done
 - Scheduling conflict warnings
-- **Bonus**: Suggest next available time slot
+- **Bonus**: Suggest next available time slot for a certain pet based on tasks already made for that pet with time and duration info
 - **Bonus**: Sort by priority and time (either alone) with order importance
     - For example: priority then time, time then priority, just time, and just priority
-- **Bonus**: Save data across page refreshes via a JSON file.
+- **Bonus**: Save data across page refreshes via a JSON file
 - **Bonus**: Clean polished UI:
     - Tables for neatly displaying pets
     - Cards for neatly displaying tasks
     - Emojis for priorities, conflicts, delete buttons, and complete buttons for easy recognition
     - Color coded messages (e.g., red for errors)
 
-## Getting started
-
-### Setup
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### Suggested workflow
-
-1. Read the scenario carefully and identify requirements and edge cases.
-2. Draft a UML diagram (classes, attributes, methods, relationships).
-3. Convert UML into Python class stubs (no logic yet).
-4. Implement scheduling logic in small increments.
-5. Add tests to verify key behaviors.
-6. Connect your logic to the Streamlit UI in `app.py`.
-7. Refine UML so it matches what you actually built.
+![PawPal+ owner and pets sections](./screenshots/image1.png)
+![PawPal+ task maker and schedule](./screenshots/image2.png)
 
 ## Testing PawPal+
 
