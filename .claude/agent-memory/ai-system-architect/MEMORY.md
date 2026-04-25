@@ -1,0 +1,2 @@
+- [User Profile](user_profile.md) — Krish A. Patel, CodePath AI110 student, Python-comfortable, new to React, values readable/modular code and portfolio quality
+- [Project Context](project_context.md) — PawPal++ Final Project: extend Streamlit prototype to React+Python AI system with Gemini, due April 2026
