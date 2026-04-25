@@ -17,6 +17,7 @@ load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from routers import owner, pets, tasks, slots
 
 # ---------------------------------------------------------------------------
 # Application instance
@@ -45,6 +46,13 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------------
+
+
+# Register all routers — each brings its own prefix and tags.
+app.include_router(owner.router)
+app.include_router(pets.router)
+app.include_router(tasks.router)
+app.include_router(slots.router)
 
 
 @app.get("/health", tags=["meta"])
