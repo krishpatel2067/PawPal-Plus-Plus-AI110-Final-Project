@@ -3,23 +3,25 @@
  * --------------------------------------
  * Filter controls (pet, status) and sort controls (ordered key list).
  *
- * sortBy is an ordered array — the first item is the primary sort key.
- * Checking a box appends it to the end; unchecking removes it.
- * The displayed numbers show the current sort priority.
+ * sortBy is an ordered array of { key, dir } objects.
+ * Checking a box appends { key, dir:'asc' }; unchecking removes it.
+ * The numbered badge shows sort priority; the arrow button toggles asc/desc.
  */
 
-import { Checkbox } from '@/components/ui/checkbox'
-import { Label } from '@/components/ui/label'
+import { ArrowUp, ArrowDown } from 'lucide-react';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
-import { Separator } from '@/components/ui/separator'
+} from '@/components/ui/select';
+import { Separator } from '@/components/ui/separator';
 
-const SORT_KEYS = ['Priority', 'Date & Time']
+const SORT_KEYS = ['Priority', 'Date & Time'];
 
 export default function TaskFilters({
   pets,
@@ -29,6 +31,7 @@ export default function TaskFilters({
   onFilterPetChange,
   onFilterStatusChange,
   onSortToggle,
+  onSortDirToggle,
 }) {
   return (
     <div className="flex flex-wrap items-end gap-4">
@@ -71,8 +74,9 @@ export default function TaskFilters({
         <Label className="text-xs text-muted-foreground">Sort by (order matters)</Label>
         <div className="flex gap-4">
           {SORT_KEYS.map((key) => {
-            const idx = sortBy.indexOf(key)
-            const checked = idx !== -1
+            const idx   = sortBy.findIndex((s) => s.key === key);
+            const entry = sortBy[idx];
+            const checked = idx !== -1;
             return (
               <div key={key} className="flex items-center gap-1.5">
                 <Checkbox
@@ -88,11 +92,26 @@ export default function TaskFilters({
                   )}
                   {key}
                 </Label>
+                {/* Direction toggle — only shown when this key is active */}
+                {checked && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-5 w-5 text-muted-foreground hover:text-foreground"
+                    onClick={() => onSortDirToggle(key)}
+                    aria-label={`${key} direction: ${entry.dir === 'asc' ? 'ascending' : 'descending'}`}
+                  >
+                    {entry.dir === 'asc'
+                      ? <ArrowUp className="h-3 w-3" />
+                      : <ArrowDown className="h-3 w-3" />
+                    }
+                  </Button>
+                )}
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </div>
-  )
+  );
 }

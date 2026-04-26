@@ -63,30 +63,33 @@ function filterByStatus(tasks, filterStatus) {
 }
 
 /**
- * Sort by an ordered list of keys. Keys are applied left-to-right so the
- * first key is the primary sort, the second is the tiebreaker, etc.
- * Untimed tasks sort after timed tasks within the same date.
+ * Sort by an ordered list of { key, dir } entries. Entries are applied
+ * left-to-right so the first is the primary sort, the second is the
+ * tiebreaker, etc. Untimed tasks sort after timed tasks within the same date
+ * regardless of direction (direction flips the date order, not the timed/untimed rule).
  *
- * @param {string[]} sortBy - e.g. ['Priority', 'Date & Time']
+ * @param {{ key: string, dir: 'asc'|'desc' }[]} sortBy
  */
 function sortTasks(tasks, sortBy) {
   if (!sortBy.length) return tasks
 
   return [...tasks].sort((a, b) => {
-    for (const key of sortBy) {
+    for (const { key, dir } of sortBy) {
+      const flip = dir === 'desc' ? -1 : 1
+
       if (key === 'Priority') {
         const diff = (PRIORITY_ORDER[a.priority] ?? 99) - (PRIORITY_ORDER[b.priority] ?? 99)
-        if (diff !== 0) return diff
+        if (diff !== 0) return diff * flip
       }
+
       if (key === 'Date & Time') {
-        // Compare dates first
-        if (a.date < b.date) return -1
-        if (a.date > b.date) return 1
-        // Same date — timed tasks come before untimed
+        if (a.date < b.date) return -1 * flip
+        if (a.date > b.date) return  1 * flip
+        // Same date — timed tasks always come before untimed (direction-independent)
         if (a.time_start && !b.time_start) return -1
-        if (!a.time_start && b.time_start) return 1
+        if (!a.time_start && b.time_start) return  1
         if (a.time_start && b.time_start && a.time_start !== b.time_start) {
-          return a.time_start < b.time_start ? -1 : 1
+          return (a.time_start < b.time_start ? -1 : 1) * flip
         }
       }
     }

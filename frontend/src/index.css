@@ -261,3 +261,18 @@ code {
     @apply bg-background text-foreground;}
   html {
     @apply font-sans;}}
+
+/* Accessibility: honour the OS "reduce motion" preference.
+   Cuts all CSS transitions and animations to near-zero so users who are
+   sensitive to motion (vestibular disorders, epilepsy, preference) are
+   not affected by Shadcn/tw-animate-css effects. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

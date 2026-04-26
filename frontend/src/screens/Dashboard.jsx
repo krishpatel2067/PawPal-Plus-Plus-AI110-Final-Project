@@ -28,12 +28,21 @@ export default function Dashboard({ owner, onDeleteOwner }) {
   // ── Filter / sort state ──────────────────────────────────────────────────
   const [filterPet,    setFilterPet]    = useState('all')
   const [filterStatus, setFilterStatus] = useState('all')
-  // sortBy is an ordered array — earlier index = higher sort priority
+  // sortBy is an ordered array of { key, dir } — earlier index = higher sort priority
   const [sortBy, setSortBy] = useState([])
 
+  // Append { key, dir:'asc' } when enabling; remove when disabling
   const toggleSort = (key) =>
     setSortBy((prev) =>
-      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
+      prev.some((s) => s.key === key)
+        ? prev.filter((s) => s.key !== key)
+        : [...prev, { key, dir: 'asc' }]
+    )
+
+  // Flip asc ↔ desc for an already-active sort key
+  const toggleSortDir = (key) =>
+    setSortBy((prev) =>
+      prev.map((s) => s.key === key ? { ...s, dir: s.dir === 'asc' ? 'desc' : 'asc' } : s)
     )
 
   // ── Suggested slot state — cleared once TaskForm consumes it ─────────────
@@ -131,6 +140,7 @@ export default function Dashboard({ owner, onDeleteOwner }) {
             onFilterPetChange={setFilterPet}
             onFilterStatusChange={setFilterStatus}
             onSortToggle={toggleSort}
+            onSortDirToggle={toggleSortDir}
           />
 
           <TaskList
