@@ -24,7 +24,7 @@ DATA_ROOT: Path = BACKEND_DIR / "data" / "users"
 
 # The Gemini model identifier used for all AI calls.
 # Changing this one constant updates every AI call in the system.
-GEMINI_MODEL: str = "gemini-1.5-flash"
+GEMINI_MODEL: str = "gemini-3.1-flash-lite-preview"
 
 # The user ID used when no authentication is in place (Phase 1 / prototype).
 # Future phases can replace this with a real user identity from an auth token.

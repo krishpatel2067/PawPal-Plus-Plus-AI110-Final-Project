@@ -1,0 +1,275 @@
+[
+  {
+    "id": "dog-feeding",
+    "species": "dog",
+    "topic": "feeding",
+    "title": "Feeding guidelines for dogs",
+    "content": "Adult dogs generally need two meals per day, while puppies under six months need three to four smaller meals. Portion size depends on the dog's weight, age, and activity level — follow the feeding guidelines on your chosen food and adjust based on body condition. Avoid feeding dogs chocolate, grapes, raisins, onions, xylitol, and macadamia nuts, as these are toxic. Fresh water should be available at all times. Free-feeding (leaving food out all day) is not recommended as it can lead to obesity."
+  },
+  {
+    "id": "dog-exercise",
+    "species": "dog",
+    "topic": "exercise",
+    "title": "Exercise needs for dogs",
+    "content": "Most adult dogs need 30 minutes to 2 hours of exercise per day depending on breed and age. High-energy breeds like Border Collies and Huskies need more vigorous daily activity, while brachycephalic breeds (Bulldogs, Pugs) need shorter, low-intensity sessions to avoid breathing problems. Mental stimulation through puzzle toys, training, and scent work is as important as physical exercise. Puppies should be exercised in shorter, more frequent bursts to protect developing joints. Senior dogs still benefit from daily walks but at a gentler pace."
+  },
+  {
+    "id": "dog-grooming",
+    "species": "dog",
+    "topic": "grooming",
+    "title": "Grooming guidelines for dogs",
+    "content": "Short-coated dogs need brushing once a week, while long-coated or double-coated breeds may need daily brushing to prevent matting. Most dogs need bathing every four to six weeks, though active outdoor dogs may need it more frequently. Nails should be trimmed every three to four weeks; overgrown nails can cause pain and affect gait. Ears should be checked weekly for redness, odor, or discharge, and cleaned gently with a vet-approved solution as needed. Regular grooming sessions also provide an opportunity to check for lumps, skin issues, or parasites."
+  },
+  {
+    "id": "dog-health",
+    "species": "dog",
+    "topic": "health",
+    "title": "Health warning signs in dogs",
+    "content": "Seek veterinary attention if your dog shows: loss of appetite for more than 24 hours, vomiting or diarrhea lasting more than a day, difficulty breathing, pale or white gums, sudden lethargy or collapse, straining to urinate or defecate, bloated or distended abdomen, unexplained weight loss, excessive drinking or urination, or any seizure activity. Limping that persists beyond a day or two also warrants a vet visit. Dogs are stoic — by the time they show obvious pain, the issue is often serious."
+  },
+  {
+    "id": "dog-vaccinations",
+    "species": "dog",
+    "topic": "vaccinations",
+    "title": "Vaccination schedule for dogs",
+    "content": "Core vaccines for dogs include distemper, parvovirus, adenovirus (hepatitis), and rabies. Puppies receive a series starting at 6-8 weeks, with boosters every 3-4 weeks until 16 weeks old. The rabies vaccine is given at 12-16 weeks and again at one year. After the initial series, boosters are given every 1-3 years depending on the vaccine and local regulations. Non-core vaccines (Bordetella, Leptospirosis, Lyme, Canine Influenza) are recommended based on lifestyle and geographic risk. Keep a written vaccination record for boarding, travel, and veterinary reference."
+  },
+  {
+    "id": "dog-dental",
+    "species": "dog",
+    "topic": "dental",
+    "title": "Dental care for dogs",
+    "content": "Dental disease affects over 80% of dogs by age three and is linked to heart, kidney, and liver disease. Daily brushing with dog-specific toothpaste (never human toothpaste, which contains toxic xylitol) is the gold standard. Dental chews, water additives, and dental-formula diets can supplement but not replace brushing. Professional dental cleanings under anesthesia should be performed as recommended by your vet, typically every 1-2 years. Signs of dental problems include bad breath, red or bleeding gums, difficulty eating, and pawing at the mouth."
+  },
+  {
+    "id": "cat-feeding",
+    "species": "cat",
+    "topic": "feeding",
+    "title": "Feeding guidelines for cats",
+    "content": "Cats are obligate carnivores and require a diet rich in animal protein — they cannot thrive on vegetarian diets. Adult cats generally do well with two meals per day; kittens under six months need three to four. Wet food provides important hydration since cats have a low thirst drive and are prone to urinary issues. Avoid feeding cats onions, garlic, grapes, raisins, alcohol, caffeine, and dog food (which lacks taurine, essential for cats). Obesity is common in indoor cats — measure portions rather than free-feeding."
+  },
+  {
+    "id": "cat-exercise",
+    "species": "cat",
+    "topic": "exercise",
+    "title": "Exercise needs for cats",
+    "content": "Indoor cats need at least 15-20 minutes of active play per day to prevent obesity and boredom-related behavior problems. Interactive wand toys, laser pointers, and puzzle feeders are effective for engaging a cat's hunting instincts. Cat trees, window perches, and climbing structures provide environmental enrichment and physical activity. Two daily play sessions of 10 minutes each are more effective than one long session. Senior cats still benefit from gentle daily play tailored to their mobility."
+  },
+  {
+    "id": "cat-grooming",
+    "species": "cat",
+    "topic": "grooming",
+    "title": "Grooming guidelines for cats",
+    "content": "Most shorthaired cats groom themselves effectively, but benefit from weekly brushing to reduce shedding and hairballs. Longhaired cats (Persians, Maine Coons) need daily brushing to prevent painful mats. Cats rarely need baths unless they get into something sticky or toxic. Nails should be trimmed every 2-3 weeks. Check ears monthly for dark debris (ear mites) or redness. Despite self-grooming, cats still benefit from regular human-assisted grooming to catch health issues early and reduce stress during vet visits."
+  },
+  {
+    "id": "cat-health",
+    "species": "cat",
+    "topic": "health",
+    "title": "Health warning signs in cats",
+    "content": "Cats hide illness well — any change in behavior warrants attention. Seek immediate veterinary care for: straining to urinate or crying in the litter box (especially male cats, who can develop life-threatening urinary blockages), sudden loss of coordination, difficulty breathing, pale gums, or collapse. See a vet within 24 hours for: not eating for 24+ hours, vomiting more than twice a day, diarrhea with blood, hiding more than usual, or significant changes in water intake. Weight loss that is gradual but consistent over weeks is also a common sign of underlying illness."
+  },
+  {
+    "id": "cat-vaccinations",
+    "species": "cat",
+    "topic": "vaccinations",
+    "title": "Vaccination schedule for cats",
+    "content": "Core vaccines for cats include FVRCP (feline viral rhinotracheitis, calicivirus, and panleukopenia) and rabies. Kittens receive FVRCP starting at 6-8 weeks with boosters every 3-4 weeks until 16 weeks. Rabies is given at 12-16 weeks. After the initial kitten series, boosters are given at one year, then every 1-3 years. The FeLV (feline leukemia virus) vaccine is recommended for outdoor cats or cats with outdoor exposure. Indoor-only cats have different risk profiles, so discuss with your vet which vaccines are appropriate."
+  },
+  {
+    "id": "cat-dental",
+    "species": "cat",
+    "topic": "dental",
+    "title": "Dental care for cats",
+    "content": "Periodontal disease is the most common health problem in cats, affecting most cats over age three. Daily tooth brushing with feline-safe toothpaste is the most effective prevention. Introduce brushing gradually with finger brushes and positive reinforcement. Dental treats, water additives, and prescription dental diets can help but are supplementary. Professional dental cleanings under anesthesia are typically needed every 1-2 years. A condition called tooth resorption is common in cats and causes significant pain — it can only be detected by dental X-rays during a professional cleaning."
+  },
+  {
+    "id": "rabbit-feeding",
+    "species": "rabbit",
+    "topic": "feeding",
+    "title": "Feeding guidelines for rabbits",
+    "content": "The foundation of a rabbit's diet should be unlimited fresh timothy hay (or orchard grass for variety), which provides essential fiber for gut motility and wears down continuously growing teeth. Fresh leafy greens (romaine, kale, parsley, cilantro) should make up about 10-15% of the diet. Pellets should be limited to about 1/4 cup per 5 lbs of body weight per day. Fruits and starchy vegetables are treats only — no more than 1-2 tablespoons per day. Never feed rabbits muesli-style mixes, iceberg lettuce, potatoes, or avocado."
+  },
+  {
+    "id": "rabbit-exercise",
+    "species": "rabbit",
+    "topic": "exercise",
+    "title": "Exercise needs for rabbits",
+    "content": "Rabbits need at least 3-4 hours of free-roaming exercise outside their enclosure daily. A sedentary rabbit is prone to obesity, GI stasis, and spinal problems (rabbits can fracture their spine if they kick violently in a confined space). Safe, rabbit-proofed spaces with room to run, jump, and explore are ideal. Rabbits are most active at dawn and dusk, so exercise time should be scheduled around those periods when possible. Tunnels, platforms, and cardboard boxes enrich their environment and encourage natural movement."
+  },
+  {
+    "id": "rabbit-grooming",
+    "species": "rabbit",
+    "topic": "grooming",
+    "title": "Grooming guidelines for rabbits",
+    "content": "Rabbits groom themselves like cats but should never be bathed — wet rabbits can go into shock and develop hypothermia. Brush short-coated rabbits weekly and longhaired breeds (Angoras) daily to prevent wool block, where ingested fur accumulates in the gut. Unlike cats, rabbits cannot vomit, so hairballs can be life-threatening. During heavy seasonal shedding (spring and fall), daily brushing prevents excessive ingestion. Nails should be trimmed every 4-6 weeks — overgrown nails can get caught and cause injuries. Scent glands on either side of the genitals may need gentle cleaning every 1-3 months."
+  },
+  {
+    "id": "rabbit-health",
+    "species": "rabbit",
+    "topic": "health",
+    "title": "Health warning signs in rabbits",
+    "content": "Rabbits are prey animals that conceal illness — by the time symptoms appear, the situation is often critical. Seek emergency care for: no gut sounds (GI stasis), no feces for 12+ hours, head tilt, loss of balance, labored breathing, or paralysis. See a vet within 24 hours for: not eating or drinking for 12 hours, watery diarrhea, sneezing with nasal discharge, overgrown or malaligned teeth, or soft mushy cecotropes (the dark soft droppings rabbits re-eat directly from their bottom). Dental problems are extremely common in rabbits and often cause reduced appetite."
+  },
+  {
+    "id": "rabbit-vaccinations",
+    "species": "rabbit",
+    "topic": "vaccinations",
+    "title": "Vaccination schedule for rabbits",
+    "content": "In the United States, there are currently no licensed rabbit vaccines, but Rabbit Hemorrhagic Disease Virus type 2 (RHDV2) is spreading and an imported vaccine may be available through exotic vets in affected areas. In the UK and Europe, rabbits are routinely vaccinated against RHDV and myxomatosis, starting at 5 weeks with annual boosters. Spaying and neutering is strongly recommended for all pet rabbits to prevent reproductive cancers (uterine cancer affects up to 85% of unspayed does by age 5) and to reduce aggressive or territorial behavior."
+  },
+  {
+    "id": "rabbit-dental",
+    "species": "rabbit",
+    "topic": "dental",
+    "title": "Dental care for rabbits",
+    "content": "Rabbit teeth grow continuously throughout their lives and must be worn down by constant hay consumption — this is the primary reason unlimited hay is essential. Malocclusion (misaligned teeth) is one of the most common health problems in rabbits, particularly in dwarf and lop breeds. Signs include drooling, weight loss, dropping food, and facial swelling. Dental exams require sedation because rabbit teeth extend deep into the skull and are not fully visible without X-rays. Many rabbits need dental filing (burring) under anesthesia every 3-12 months once dental disease develops. There is no substitute for daily hay to maintain good dental health."
+  },
+  {
+    "id": "bird-feeding",
+    "species": "bird",
+    "topic": "feeding",
+    "title": "Feeding guidelines for birds",
+    "content": "A formulated pellet diet should make up 60-70% of a pet bird's diet — seeds alone are nutritionally incomplete and high in fat. Fresh vegetables (leafy greens, carrots, bell peppers, broccoli) and small amounts of fruit complete the diet. Offer fresh food in the morning and remove uneaten portions within a few hours. Never feed birds avocado, chocolate, onions, garlic, caffeine, alcohol, or apple seeds — these are toxic. Grit is NOT needed by hookbills (parrots) as they hull their seeds. Water should be changed daily as birds frequently foul it."
+  },
+  {
+    "id": "bird-exercise",
+    "species": "bird",
+    "topic": "exercise",
+    "title": "Exercise needs for birds",
+    "content": "Pet birds need a minimum of 2-4 hours outside their cage daily in a safe, supervised environment. Flight is the most natural exercise — if wing clipping is chosen, ensure the bird still gets opportunities to climb, flap, and move. Foraging enrichment (hiding food in toys, wrapping treats) provides both physical and mental stimulation critical for preventing feather plucking and screaming. Large parrot species like macaws and cockatoos need even more out-of-cage time. Rotating toys prevents boredom. Social interaction with family members counts as enrichment and is essential for flock-oriented species."
+  },
+  {
+    "id": "bird-grooming",
+    "species": "bird",
+    "topic": "grooming",
+    "title": "Grooming guidelines for birds",
+    "content": "Most pet birds benefit from regular misting with lukewarm water or a shallow bath dish to encourage natural preening, which maintains feather condition. Nail trimming frequency varies by species but is typically every 4-8 weeks — overgrown nails can snag and cause injury. Beak trimming is not routine and should only be performed by a vet if the beak is genuinely overgrown or misaligned. Wing clipping is a personal choice that should be discussed with an avian vet — it reduces flight but does not eliminate all injury risk. Avoid aerosols, non-stick cookware fumes (PTFE/Teflon), and scented candles near birds, as they can be fatal."
+  },
+  {
+    "id": "bird-health",
+    "species": "bird",
+    "topic": "health",
+    "title": "Health warning signs in birds",
+    "content": "Birds instinctively hide illness — by the time a bird looks sick, it is often critically ill. Seek same-day veterinary care for: fluffed feathers with closed eyes (a bird sitting 'puffed up'), tail bobbing while breathing, open-mouth breathing, discharge from nostrils or eyes, inability to perch, seizures, or visible injury. Monitor for: changes in droppings (watery, discolored, or absent feces), reduced vocalization, changes in appetite, or feather destruction. A healthy bird is alert, vocal, and actively preening. Annual wellness exams with an avian veterinarian are strongly recommended."
+  },
+  {
+    "id": "bird-vaccinations",
+    "species": "bird",
+    "topic": "vaccinations",
+    "title": "Health checkups and testing for birds",
+    "content": "There are no routine vaccinations for most pet bird species. Instead, preventive care focuses on annual wellness exams with an avian vet, which include physical examination and may include blood work to check organ function. New birds should be quarantined for 30-45 days before introduction to existing birds and tested for Psittacosis (Chlamydophila), Polyomavirus, and PBFD (Psittacine Beak and Feather Disease). Polyomavirus vaccination is available for some parrot species in certain countries. Regular fecal testing can detect internal parasites. Finding an avian-specialist vet before you need one in an emergency is strongly advised."
+  },
+  {
+    "id": "bird-dental",
+    "species": "bird",
+    "topic": "dental",
+    "title": "Beak health in birds",
+    "content": "Birds do not have teeth, but beak health is critical. A healthy beak is smooth, symmetrical, and the upper and lower mandibles meet properly. Overgrowth can indicate nutritional deficiencies, liver disease, or mites. Cuttlebone and mineral blocks provide natural beak conditioning and are excellent calcium sources. Chewing on safe wood toys is natural behavior that maintains beak condition. Never attempt to trim a bird's beak at home — improper trimming can cause fractures, bleeding, and permanent damage. If you notice beak flaking, asymmetry, soft spots, or rapid overgrowth, see an avian vet promptly."
+  },
+  {
+    "id": "fish-feeding",
+    "species": "fish",
+    "topic": "feeding",
+    "title": "Feeding guidelines for fish",
+    "content": "Most aquarium fish should be fed once or twice daily, with only as much food as they can consume in 2-3 minutes. Overfeeding is one of the most common fish-keeping mistakes — uneaten food decomposes, raises ammonia levels, and pollutes the tank. Choose food appropriate to the species: flakes for most community fish, pellets for larger species, freeze-dried or live foods for carnivorous species. Fast fish one day per week to reduce waste and prevent digestive issues. Herbivorous fish like plecos need blanched vegetables (zucchini, cucumber) as a dietary staple."
+  },
+  {
+    "id": "fish-exercise",
+    "species": "fish",
+    "topic": "exercise",
+    "title": "Tank space and environmental needs for fish",
+    "content": "Fish require adequate space to swim and establish territories — overcrowding causes stress, aggression, and disease. The general guideline is 1 inch of fish per gallon, though this is a rough minimum and large or messy fish need far more. Larger tanks are more stable and forgiving of water quality fluctuations. Live plants, driftwood, rocks, and hiding spots reduce stress, encourage natural behaviors, and improve water quality. Adequate filtration and regular water changes (typically 25-30% weekly) are essential for maintaining the healthy water chemistry fish need to thrive."
+  },
+  {
+    "id": "fish-grooming",
+    "species": "fish",
+    "topic": "grooming",
+    "title": "Tank maintenance for fish",
+    "content": "Fish require a clean, well-maintained environment rather than direct grooming. Weekly partial water changes (25-30%) remove toxins and replenish minerals. Clean algae from glass as needed, rinse filter media in removed tank water (never tap water) to preserve beneficial bacteria, and vacuum substrate to remove waste. Test water parameters weekly using a liquid test kit: ammonia and nitrite should always be 0, nitrate under 20-40ppm, and pH appropriate for your species. Avoid sudden temperature changes — use a thermometer to monitor daily and keep the tank away from drafts, direct sunlight, and heat sources."
+  },
+  {
+    "id": "fish-health",
+    "species": "fish",
+    "topic": "health",
+    "title": "Health warning signs in fish",
+    "content": "Common signs of illness in fish include: white spots on fins or body (Ich/White Spot disease), frayed or clamped fins, unusual swimming patterns (floating, sinking, spinning), loss of color, visible sores or ulcers, labored gill movement, loss of appetite, and hiding more than usual. The most common cause of fish illness is poor water quality — check parameters first before treating for disease. Quarantine sick fish in a separate tank before treating to avoid exposing all tank inhabitants to medication. Many fish diseases are highly contagious in a shared tank environment."
+  },
+  {
+    "id": "fish-vaccinations",
+    "species": "fish",
+    "topic": "vaccinations",
+    "title": "Preventive health care for fish",
+    "content": "There are no vaccines available for most ornamental fish. Prevention is focused entirely on water quality, appropriate tank mates, and quarantine practices. New fish should be quarantined in a separate tank for 2-4 weeks before introduction to an established aquarium to prevent introduction of disease. Quarantine tanks do not need to be large — a simple 10-gallon tank with a sponge filter suffices. Stress is the primary immune suppressor in fish, so maintaining stable water parameters, avoiding overcrowding, and providing adequate hiding places are the most important preventive measures."
+  },
+  {
+    "id": "fish-dental",
+    "species": "fish",
+    "topic": "dental",
+    "title": "Oral and digestive health in fish",
+    "content": "Fish have teeth adapted to their diet — predatory fish have sharp teeth while herbivores have flatter grinding teeth. Healthy fish actively eat and have no visible mouth abnormalities. Mouth rot (columnaris) causes white, cottony patches around the mouth and is often linked to poor water quality or physical injury. Constipation in fish presents as a distended belly or stringy feces and is often caused by overfeeding, lack of dietary fiber, or feeding exclusively dry foods. Fasting for 24-48 hours followed by offering a cooked, de-shelled pea is a common remedy for mild constipation. Bloat (dropsy) is a serious condition marked by severe swelling and raised scales."
+  },
+  {
+    "id": "hamster-feeding",
+    "species": "hamster",
+    "topic": "feeding",
+    "title": "Feeding guidelines for hamsters",
+    "content": "Hamsters do best on a high-quality seed-and-grain mix or lab block pellet as a base, supplemented with small amounts of fresh vegetables (broccoli, cucumber, leafy greens) and occasional protein (mealworms, hard-boiled egg). Feed approximately 1-2 teaspoons of food per day — hamsters hoard food, so check the cage for stockpiles and remove perishable items promptly. Avoid sugary treats, citrus fruits, onions, garlic, almonds, and chocolate. Fresh water must be available at all times via a sipper bottle. Syrian hamsters and dwarf hamsters have slightly different nutritional needs — dwarf hamsters are prone to diabetes and should have minimal sugary foods."
+  },
+  {
+    "id": "hamster-exercise",
+    "species": "hamster",
+    "topic": "exercise",
+    "title": "Exercise needs for hamsters",
+    "content": "Hamsters are highly active and can run 5-8 miles per night in the wild. A solid-surface exercise wheel (not barred, to prevent leg injuries) at least 8 inches in diameter for Syrian hamsters and 6.5 inches for dwarf hamsters is essential. Wheels should be available at all times. Supervised floor time in a secure, escape-proof playpen provides additional enrichment. Hamster balls are controversial — while they provide movement, visibility is limited and ventilation can be poor; sessions should be brief (15 minutes maximum) and well-monitored. Tubes, multi-level cages, and burrowing material also encourage natural exercise behaviors."
+  },
+  {
+    "id": "hamster-grooming",
+    "species": "hamster",
+    "topic": "grooming",
+    "title": "Grooming guidelines for hamsters",
+    "content": "Hamsters are fastidious self-groomers and rarely need human grooming assistance. Never bathe a hamster in water — it strips essential oils, causes severe stress, and can lead to fatal pneumonia. Instead, a sand bath (with fine chinchilla or reptile sand, not dust) allows hamsters to clean their coats naturally. Longhaired (Teddy Bear) Syrian hamsters may occasionally need gentle brushing with a soft toothbrush to prevent matting around the rear. Check the cheek pouches by gently feeling from the outside — an asymmetric or persistently packed pouch may indicate an impacted pouch requiring vet care. Nails rarely need trimming if the cage has rough surfaces."
+  },
+  {
+    "id": "hamster-health",
+    "species": "hamster",
+    "topic": "health",
+    "title": "Health warning signs in hamsters",
+    "content": "Hamsters have short lifespans (2-3 years) and can decline quickly. Seek veterinary care for: wet tail (profuse watery diarrhea, usually in recently weaned hamsters — often fatal within 24-48 hours without treatment), labored breathing, significant weight loss, lumps or bumps, hair loss, eye discharge or closed eye, or seizures. Monitor droppings daily — changes in consistency or volume are early signs of illness. Hamsters that are lethargic during their active hours (typically night), not eating, or not using their wheel may be ill. Hibernation-like torpor (induced by cold temperatures below 60°F/15°C) can be mistaken for death — gently warm the hamster in your hands before assuming the worst."
+  },
+  {
+    "id": "hamster-vaccinations",
+    "species": "hamster",
+    "topic": "vaccinations",
+    "title": "Preventive health care for hamsters",
+    "content": "There are no vaccines available for pet hamsters. Preventive care centers on excellent husbandry: a clean cage (spot-cleaned daily, fully cleaned weekly), appropriate temperature (65-75°F / 18-24°C), a low-stress environment, and proper nutrition. New hamsters should be quarantined for 2 weeks before contact with other hamsters, as respiratory infections spread easily. Hamsters are solitary animals (with the exception of some dwarf species) — housing Syrian hamsters together will result in serious fighting. An annual or biannual wellness exam with an exotic small-animal vet is worthwhile given their short lifespan, as early detection of conditions like tumors or dental disease can significantly improve quality of life."
+  },
+  {
+    "id": "hamster-dental",
+    "species": "hamster",
+    "topic": "dental",
+    "title": "Dental care for hamsters",
+    "content": "Hamsters have four continuously growing incisors that must be worn down by gnawing. Provide wooden chews, untreated hardwood branches (apple, pear, hazel), and cardboard regularly. Malocclusion (misaligned incisors that grow past each other) prevents normal gnawing and eating, and requires regular veterinary trimming under anesthesia. Signs include drooling, weight loss, dropping food from the mouth, and obvious tooth overgrowth visible at the front of the mouth. Cheek pouch impaction, where food becomes stuck, can also affect eating. A diet that includes things requiring chewing (hay, whole grains) helps maintain healthy tooth wear."
+  },
+  {
+    "id": "general-vet-visit",
+    "species": "all",
+    "topic": "health",
+    "title": "When to visit the vet",
+    "content": "As a general rule, any pet that stops eating for more than 24 hours, has repeated vomiting or diarrhea, shows signs of pain (vocalizing, guarding a body part, reluctance to move), is breathing abnormally, or has a sudden change in behavior warrants a same-day or next-day vet visit. Annual wellness exams are recommended for all pets — they allow early detection of conditions that may not have visible symptoms yet. Establish a relationship with a vet before an emergency occurs. Know the location of your nearest emergency animal hospital in advance. Senior pets (dogs and cats over 7, rabbits over 5, hamsters over 1.5 years) benefit from twice-yearly exams."
+  },
+  {
+    "id": "general-new-pet",
+    "species": "all",
+    "topic": "health",
+    "title": "New pet checklist and settling in",
+    "content": "When bringing a new pet home, schedule a veterinary wellness exam within the first week. Allow the animal several days to two weeks to adjust to its new environment with minimal handling and low stress — this is especially important for prey animals like rabbits, birds, and hamsters. Quarantine new pets away from existing animals for 2-4 weeks to prevent disease transmission. Ensure the home is pet-proofed: secure loose wires, toxic plants (check the ASPCA toxic plant list), and escape routes. Have all necessary supplies ready before the pet arrives, including appropriate food, housing, enrichment, and a carrier for vet visits."
+  },
+  {
+    "id": "general-senior-care",
+    "species": "all",
+    "topic": "health",
+    "title": "Senior pet care",
+    "content": "Senior pets require more frequent veterinary monitoring, typically every 6 months rather than annually. Common age-related conditions include arthritis (provide ramps, orthopedic bedding, and limit strenuous jumping), dental disease (more prevalent with age), kidney disease (increased water intake and urination are early signs), diabetes, and cognitive dysfunction syndrome (confusion, disorientation, changes in sleep patterns). Adjust diet to senior formulations where available, as protein and calorie requirements change with age. Maintain gentle exercise to preserve muscle mass and joint mobility. Quality of life assessments become important as pets age — your vet can help you monitor comfort and wellbeing."
+  }
+]

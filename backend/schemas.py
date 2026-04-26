@@ -126,6 +126,30 @@ class SlotOut(BaseModel):
     time_start: str  # "HH:MM"
 
 
+# ── AI Advisor (RAG) ──────────────────────────────────────────────────────────
+
+
+class AskIn(BaseModel):
+    """Payload for the POST /ask endpoint."""
+
+    question: str = Field(..., min_length=1, description="The user's pet-care question.")
+
+
+class SourceOut(BaseModel):
+    """A single retrieved knowledge chunk returned alongside the answer."""
+
+    id: str
+    title: str
+    source: str  # "faq" | "user-data"
+
+
+class AskOut(BaseModel):
+    """Response returned by the AI advisor."""
+
+    answer: str
+    sources: list[SourceOut]
+
+
 # ── Generic responses ─────────────────────────────────────────────────────────
 
 

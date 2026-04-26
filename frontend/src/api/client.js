@@ -86,6 +86,16 @@ export const deleteTask = (taskId) =>
 export const completeTask = (taskId) =>
   request(`/tasks/${taskId}/complete`, { method: 'POST' })
 
+// ── AI Advisor ────────────────────────────────────────────────────────────────
+
+/**
+ * Ask the RAG-powered pet-care advisor a question.
+ * Body: { question: string }
+ * Returns { answer: string, sources: [{ id, title, source }] }
+ */
+export const askAdvisor = (question) =>
+  request('/ask', { method: 'POST', body: JSON.stringify({ question }) });
+
 // ── Slot suggestion ───────────────────────────────────────────────────────────
 
 /**

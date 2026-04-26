@@ -21,6 +21,7 @@ import TaskFilters from '@/components/tasks/TaskFilters'
 import TaskForm from '@/components/tasks/TaskForm'
 import TaskList from '@/components/tasks/TaskList'
 import SuggestSlotButton from '@/components/tasks/SuggestSlotButton'
+import AskPanel from '@/components/advisor/AskPanel'
 
 export default function Dashboard({ owner, onDeleteOwner }) {
   // ── Filter / sort state ──────────────────────────────────────────────────
@@ -67,6 +68,17 @@ export default function Dashboard({ owner, onDeleteOwner }) {
           Delete all data
         </Button>
       </div>
+
+      <Separator />
+
+      {/* ── AI Advisor ── */}
+      <section className="flex flex-col gap-4 rounded-lg border p-4">
+        <h2 className="text-lg font-semibold flex items-center gap-2">
+          <span>AI Pet-Care Advisor</span>
+          <span className="text-xs font-normal text-muted-foreground">(powered by Gemini)</span>
+        </h2>
+        <AskPanel />
+      </section>
 
       <Separator />
 
