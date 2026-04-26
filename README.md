@@ -7,7 +7,7 @@ A busy pet owner needs help staying consistent with pet care. If only there was 
 
 PawPal++ is a full-stack AI-augmented pet-care scheduling system. The frontend is a Vite + React + Shadcn/ui SPA. The backend is a FastAPI service that drives all AI logic through Google Gemini. Four AI feature categories are implemented: RAG, an agentic workflow, specialization via structured prompting, and a reliability harness.
 
-PawPal++ is an extension of another project called PawPal+, which was from Module 2 in CodePath's AI110 course. The original project included these features:
+PawPal++ is an extension of another project called [PawPal+](https://github.com/krishpatel2067/ai110-module2show-pawpal-plus), which was from Module 2 in CodePath's AI110 course. It allowed owners to create pets and task and apply basic task filtering and sorting. It also included some quasi-intelligent features such as conflict detection and suggesting the next time slot. Here are the original project's features:
 
 - Data display:
     - Sort tasks by priority or date
@@ -137,6 +137,28 @@ UI forms → REST endpoints (`/pets`, `/tasks`, `/owner`, `/slots`) → Schedule
 ### Evaluation
 `python eval.py` → 6 retrieval probes (no Gemini) + 8 live guardrail checks → colored PASS/FAIL per test → summary score
 
+## Design Decisions
+
+### TF-DIF in RAG
+
+TF-DIF, a non-intelligent algorithm, is used to first curate the list of FAQs to feed Gemini. This is the better call for this project because supplying the entire corpus of FAQs to Gemini would use up a lot of tokens and may perhaps deviate its focus when generating the response. Plus, it's not scalable: as the corpus gets larger, feeding it into generate AI would increasingly strain API usage, leading to more frequent failures.
+
+### Quasi-Custom Frontend
+
+Instead of continuing with Streamlit, I decided to go for a custom React frontend. React is more versatile than Streamlit and allows for better modularity via components, hooks, etc. Plus, such a frontend affords more professionality to this project! Nonetheless, the frontend isn't completely custom since it uses Shadcn and Tailwind for styling instead of raw CSS (which is the most customizable). This is fine for this project whose focus is on incorporating AI meaningfully into a pet care taking app. However, styling the app to be more "pet-themed" could be a potential future project.
+
+### Common Data Storage in JSON File
+
+Currently, user data is stored in a JSON file under a directory structure separated by user. There is no log-in system right now and only one owner can use the local app at a time to curb the complexity of the project and focus on the AI features. The user JSON data is actually stored under a common default user key, which avoids a full log-in system while architecturally preparing for one in the future.
+
+### Modularity
+
+Modularity is implemented both in the frontend and backend. For example, the Shadcn styling and components can be modified independently of the frontend structure and logic. In the backend, the TF-DIF can be improved without having to modify the API calls to Gemini. Finally, as mentioned in the last section, a log-in system and potential user database can be implemented due to the current structure mimicing such a system (e.g. directory for each user akin to a document in a NoSQL database). Overall, modularity was an intentional choice so that future extensions to be easily added to his project.
+
+## Testing Summary
+
+The Pytest suite of unit tests confirmed the accuracy of the core logic of the app, such as creating the next occurrence of a recurring task upon completion, sorting and filtering tasks, etc. On one occasion, it revealed that we hadn't updated the tests to match the slightly different method signatures, which put more light on the need for consistency not just in the tests but elsewhere in the app too. As Claude Code generated the tests and I reviewed them, I learned how one can efficiently organize tests. For example, when sharing a common resource or state, it is best to use a function for that that each test can initialize it at the start or use built-in functionality such as `@pytest.fixture`.
+
 ## Reflection
 
 ### AI to Aid Development
@@ -155,13 +177,30 @@ Claude Code was excellent at reading `specs.md` and the repo, laying out a gamep
 
 One flawed suggestion by Claude Code, though relatively minor, was that it assumed that the agentic Setup Planner would only be allowed to reference one pet per task. However, I caught this inconsistency with the rest of the app that allowed for multiple pets to be assigned to a task. Claude Code admitted its mistake and quickly fixed it. While this scenario wasn't alarming due to its small scale, it highlights how a software engineer must evaluate each and every output to ensure the AI isn't making any flawed assumptions that slip through and potentially compound into a bigger problem later on.
 
+### Surprises in Reliability Testing
+
+The first surprise was the rate limiting. Initially this caused some of the tests to fail when the API usage exceeded the local quota. I expected the `eval.py` evaluation script to run basically instantly, but it ended up having to include cooldowns to avoid rate limiting, leading to an overall runtime of 5-10 minutes.
+
+Another surprise was that despite having some clear flaws, I was surprised by how the evaluation script was generally accurate. Its pass rate didn't fluctuate as much as I expected from one run to another even though generative AI can return almost an infinite number of different outputs. The stability in pass rates may be due to optimizations in the underlying Gemini model as well as an accurate list of words to expect in Gemini's outputs. 
+
+### AI Biases
+
+One potential bias that the RAG experiences is simply due to the size and composition of the data it's pulling from. The current FAQ corpus is fairly small and only includes information about conventional pets such as cats, dogs, hamster, etc. So, the AI is baised towards users with conventional pets, leaving users with unconventional pets with less useful outputs. The same applies to some degree to the agent, though the user perception of this bias is more limited since it's not a direct question-answer scenario.
+
 ### System Limitations and Future Improvements
 
 | Limitations | Improvements |
 | --- | --- |
+| Locally run project | Fully deployed, publicly available app |
 | Name-based owner dashboard | Fully-fledged log-in system |
 | Small, static FAQ corpus | Much larger FAQ corpus, perhaps sourced from the web dynamically |
-| JSON file data persistence | True (SQL/no SQL) database |
+| JSON file data persistence | True (SQL/NoSQL) database |
 | Evaluation script of varying reliability | More robust evaluation script with more sophisticated checks |
 | Frequent rate limiting for AI capabilities | Paid plan for more generous API usage |
 | Standard Tailwind styles | More customized styles to reflect pet theme |
+
+### Potential AI Misuse
+
+While this AI application is relatively low-stakes (pet care taking), it's important to evaluate any potential AI misuse. Although there this app contains guardrails (e.g. against irrelevant queries Pawsley), generative AI is fluid and varying, so certain cracks may emerge. If this were a deployed and marketed app with many users, much more extensive testing must be done on the AI outputs to potentially extraneous or malicious inputs.
+
+Another pillar of AI misuse includes hallucinations, which can range from quirky mistakes to laugh off to insidiously wrong adivce that may put a pet's life in danger if the owner follows it without cross checking the information. To avoid this, the app can place warnings and fine text to warn users of AI hallucinations and to encourage them to do their own research to verify its outputs. This presents a careful balancing game since placing too much burden on the users makes the inclusion of AI less useful. Again, this is something to carefully consider and test if the app were to be fully deployed and marketed. 
