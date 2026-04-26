@@ -5,6 +5,8 @@ A busy pet owner needs help staying consistent with pet care. If only there was 
 
 ## Overview
 
+[**🎞️ Video demo**](https://www.loom.com/share/e95f8fa2cc354be583b5663374697048)
+
 PawPal++ is a full-stack AI-augmented pet-care scheduling system. The frontend is a Vite + React + Shadcn/ui SPA. The backend is a FastAPI service that drives all AI logic through Google Gemini. Four AI feature categories are implemented: RAG, an agentic workflow, specialization via structured prompting, and a reliability harness.
 
 PawPal++ is an extension of another project called [PawPal+](https://github.com/krishpatel2067/ai110-module2show-pawpal-plus), which was from Module 2 in CodePath's AI110 course. It allowed owners to create pets and task and apply basic task filtering and sorting. It also included some quasi-intelligent features such as conflict detection and suggesting the next time slot. Here are the original project's features:

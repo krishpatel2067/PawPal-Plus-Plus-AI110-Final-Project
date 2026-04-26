@@ -77,14 +77,14 @@ export default function AskPanel() {
 
             {/* Vet alert — shown first so it's impossible to miss */}
             {result.vet_alert && (
-              <div className="flex gap-2 rounded-md border border-yellow-500/40 bg-yellow-500/10 p-3 text-sm text-yellow-800 dark:text-yellow-300">
+              <div className="flex gap-2 rounded-md border border-yellow-500/40 bg-yellow-500/10 p-3 text-sm text-yellow-800 dark:text-yellow-300 text-left">
                 <TriangleAlert className="h-4 w-4 shrink-0 mt-0.5" />
                 <p>{result.vet_alert}</p>
               </div>
             )}
 
             {/* Main answer */}
-            <p className="text-sm leading-relaxed">{result.answer}</p>
+            <p className="text-sm leading-relaxed text-left">{result.answer}</p>
 
             {/* Tips */}
             {result.tips?.length > 0 && (
