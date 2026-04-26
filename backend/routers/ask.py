@@ -23,7 +23,8 @@ from __future__ import annotations
 import json
 import os
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from fastapi import APIRouter, Depends, HTTPException
 
 from config import GEMINI_MODEL
@@ -117,14 +118,12 @@ def ask_advisor(
 
     # ── Gemini call (JSON mode) ───────────────────────────────────────────────
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel(
-            model_name=GEMINI_MODEL,
-            system_instruction=_SYSTEM_PROMPT,
-        )
-        response = model.generate_content(
-            prompt,
-            generation_config=genai.GenerationConfig(
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=_SYSTEM_PROMPT,
                 response_mime_type="application/json",
             ),
         )

@@ -53,7 +53,8 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 from config import GEMINI_MODEL
 from pawpal_system import Owner, Pet, Scheduler
@@ -121,15 +122,15 @@ def _ask_gemini(question: str, context_chunks: list[dict]) -> dict:
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY not set — cannot run Gemini tests.")
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(
-        model_name=GEMINI_MODEL,
-        system_instruction=_SYSTEM_PROMPT,
-    )
+    client = genai.Client(api_key=api_key)
     prompt = _build_prompt(question, context_chunks)
-    response = model.generate_content(
-        prompt,
-        generation_config=genai.GenerationConfig(response_mime_type="application/json"),
+    response = client.models.generate_content(
+        model=GEMINI_MODEL,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            system_instruction=_SYSTEM_PROMPT,
+            response_mime_type="application/json",
+        ),
     )
     return json.loads(response.text.strip())
 

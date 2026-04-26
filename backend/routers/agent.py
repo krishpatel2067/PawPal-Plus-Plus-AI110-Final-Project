@@ -19,7 +19,8 @@ import datetime
 import json
 import os
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from fastapi import APIRouter, Depends, HTTPException
 
 from config import DEFAULT_USER_ID, GEMINI_MODEL, get_user_data_path
@@ -107,14 +108,12 @@ def plan(
     user_prompt = f"Today is {today}.\n\nUser request: {body.prompt}"
 
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel(
-            model_name=GEMINI_MODEL,
-            system_instruction=_PLAN_SYSTEM,
-        )
-        response = model.generate_content(
-            user_prompt,
-            generation_config=genai.GenerationConfig(
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=user_prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=_PLAN_SYSTEM,
                 response_mime_type="application/json",
             ),
         )

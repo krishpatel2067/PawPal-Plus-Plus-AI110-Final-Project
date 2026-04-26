@@ -40,8 +40,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
     allow_credentials=True,
-    allow_methods=["*"],   # GET, POST, PUT, DELETE, OPTIONS, …
-    allow_headers=["*"],   # Content-Type, Authorization, …
+    allow_methods=["*"],  # GET, POST, PUT, DELETE, OPTIONS, …
+    allow_headers=["*"],  # Content-Type, Authorization, …
 )
 
 # ---------------------------------------------------------------------------
@@ -53,6 +53,7 @@ app.add_middleware(
 # response has no Access-Control-Allow-Origin header and the browser reports a
 # CORS error instead of the real 500.  This handler converts every unhandled
 # exception into a JSONResponse before that happens.
+
 
 @app.exception_handler(Exception)
 async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
