@@ -93,7 +93,7 @@ export default function AskPanel() {
                   <Lightbulb className="h-3 w-3" />
                   Quick tips
                 </p>
-                <ul className="flex flex-col gap-1">
+                <ul className="flex flex-col gap-1 text-left">
                   {result.tips.map((tip, i) => (
                     <li key={i} className="flex gap-2 text-sm">
                       <span className="text-muted-foreground select-none">•</span>
