@@ -79,6 +79,8 @@ $ cd backend && pytest
 
 ## Component Descriptions
 
+The system diagram for the app can be found [here](./docs/architecture.md). 
+
 | Component | Location | Role |
 |---|---|---|
 | **Care Advisor** | `frontend/src/components/advisor/AskPanel.jsx` | RAG-powered Q&A with Pawsley persona; renders structured `{ answer, tips, vet_alert }` |
@@ -93,7 +95,7 @@ $ cd backend && pytest
 
 ## Retrieval Agumented System (RAG)
 
-PawPal++ includes Pawsley, the energetic and outgoing AI assistant designed to help answer questions from pet owners via a RAG. Pawsley's tone is specifically constrained to exhibit warmth and energy while also ensuring useful responses to help pet owners feel welcome and supported. Pawsley retrieves information from a list of top matching FAQs curated by TF-DIF along with user context (pets, tasks, etc.), and it returns a structured output, including an (optional) alert, main response, tips, and sources (FAQs and user context).
+PawPal++ includes Pawsley, the energetic and outgoing AI assistant designed to help answer questions from pet owners via a RAG. Pawsley's tone is specifically constrained to exhibit warmth and energy while also ensuring useful responses to help pet owners feel welcome and supported. Pawsley retrieves information from multiple sources: a list of top matching FAQs curated by TF-DIF along with user context (pets, tasks, etc.). Pawsley then returns a structured output, including an (optional) alert, main response, tips, and sources (FAQs and user context).
 
 Pawsley has guardrails installed to ensure it doesn't answer questions irrelevant to pet caretaking as well as admit when it's unable to find proper information from the FAQs. For example, Pawsley issues an alert if the user's query goes beyond the scope of what can be retrieved. Nonetheless, its response still tries to provide actionable advice via tips.
 
